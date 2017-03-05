@@ -153,8 +153,12 @@ namespace ServerSide{
 		public static void MatchEnd(int id) {
 			Match match = matches[findMatchIndex(id)];
 			match.setEnd(id);
-			if(match.isAllEnd())
+			if(match.isAllEnd()) {
 				BroadCastToMatch(match, "GameEnd");
+				arrayClient[match.getFreeId(0)].ShutDown();
+				arrayClient[match.getFreeId(1)].ShutDown();
+				matches.Remove(match);
+			}
 		}
         public static bool DeQueClient(int id) {
             for(int index = 0; index<matches.Count; index++) {

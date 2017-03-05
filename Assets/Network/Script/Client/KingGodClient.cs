@@ -10,7 +10,6 @@ namespace ClientSide
 
         private NetworkTranslator networkTranslator;
         private int freeId = -1;
-	    public static KingGodClient instance;
 
 	    void Awake(){
             if (Instance == null)           //Static 변수를 지정하고 이것이 없을경우 - PlayManage 스크립트를 저장하고 이것이 전 범위적인 싱글톤 오브젝트가 된다.
