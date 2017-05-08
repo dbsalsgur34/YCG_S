@@ -185,7 +185,7 @@ namespace ServerSide{
 			int index = findMatchIndex(id);
 			matches[index].setReady(id);
 			if(matches[index].isAllReady()) {
-				Send(matches[index], "Start");
+				Send(matches[index], "Started");
 			}
 				
             return true;
